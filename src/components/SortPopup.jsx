@@ -13,9 +13,9 @@ const SortPopup = React.memo(
   
     const handleOutsideClick = (e) => {
       if (!e.path.includes(sortRef.current)) {
-        setvisiblePopup(false);
+          setvisiblePopup(false);
       }
-    };
+  }
   
     useEffect(() => {
       document.body.addEventListener("click", handleOutsideClick);
