@@ -23,13 +23,15 @@ const sortItems = [
 function Home() {
   const dispatch = useDispatch();
   const items = useSelector(({ pizzas }) => pizzas.items);
+  const cartItems = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
+
+  console.log(cartItems);
+
+
   React.useEffect(() => {
-    //Remove to redux and connect redux-thunk
-    //Looking for filter and sort, and put URL parametrs from redux
-    //Make a imitation loading pizzas like a skeleton(what have in css)   
     dispatch(fetchPizzas(sortBy, category))
   }, [category, sortBy]);
 
@@ -67,7 +69,7 @@ function Home() {
             <PizzaBlock 
               onClickAddPizza={handleAddPizzaToCart}
               key={obj.id} 
-              isLoading={true}
+              addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
               {...obj} />)
         : Array(12).fill(0).map((_,idx)=><PizzaLoadingBlock key={idx} />)}
       </div>

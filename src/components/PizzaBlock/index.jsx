@@ -11,6 +11,7 @@ function PizzaBlock({
   types,
   sizes,
   onClickAddPizza,
+  addedCount,
 }) {
   const availebleTypes = ["тонкое", "традиционное"];
   const availebleSizes = [26, 30, 40];
@@ -89,8 +90,8 @@ function PizzaBlock({
               fill="white"
             />
           </svg>
-          <span>Добавить</span>
-          <i>2</i>
+          <span>Добавить</span> 
+          {addedCount && <i>{addedCount}</i>}
         </Button>
       </div>
     </div>
@@ -104,6 +105,7 @@ PizzaBlock.propTypes = {
   types: PropTypes.arrayOf(PropTypes.number),
   sizes: PropTypes.arrayOf(PropTypes.number),
   onClickAddPizza: PropTypes.func,
+  addedCount: PropTypes.number,
 };
 
 PizzaBlock.defaultProps = {
