@@ -1,8 +1,8 @@
-# `To Dowload my web-programm`
+### `To Dowload my web-programm`
 
 write this one on terminal => git clone https://github.com/ermekovtariel/react-pizza
 
-## `Design u may take` 
+### `Design u may take` 
 
 https://www.figma.com/file/wWUnQwvRDWBfPx1v1pCAfO/React-Pizza?node-id=0%3A1
 
